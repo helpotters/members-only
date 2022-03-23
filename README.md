@@ -1,24 +1,12 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A Ruby on Rails project. 
 
-Things you may want to cover:
+Details: 
+* Devise
+* Tailwind CSS
+* Ruby version: 3.0.2
 
-* Ruby version
+## General
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+This is a simple authentication project that allows users to make posts with authorship only visible to signed in users.
