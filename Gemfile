@@ -76,3 +76,8 @@ gem "devise", "~> 4.8"
 gem "cssbundling-rails", "~> 1.1"
 
 gem "font-awesome-rails", "~> 4.7"
+
+gem "simple_form", "~> 5.1"
+
+gem "guard", "~> 2.18"
+gem "guard-livereload", "~> 2.5"

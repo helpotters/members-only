@@ -1,0 +1,74 @@
+
+<section class="section">
+  <div class="container">
+    <div class="is-centered columns">
+      <div class="column is-4 content">
+        <h2 class="title">Sign up</h2>
+        <h3>Join the most exclusive (and least populated) site on Al Gore's internet!</h3>
+      </div>
+      <div class="column is-4">
+
+        <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+
+          <div class="field">
+            <div class="control has-icons-left">
+              <span class="icon is-small is-left">
+                <i class="fas fa-name"></i>
+              </span>
+              <%= f.input :name,
+                   required: true,
+                   wrapper: false,
+                   placeholder: "Phil Phillips",
+                   autofocus: true,
+                   input_html: {class:"input"},
+               label_html: {class:"label"}
+              %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left">
+              <%= f.input :username,
+                  required: true,
+                  wrapper: false,
+                  placeholder: "@philly",
+                  label_html: {class:"label"},
+               autofocus: true,
+               input_html: {class:"input"} %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left">
+              <%= f.input :email,
+                  required: true,
+                  wrapper: false,
+                  label_html: {class:"label"},
+               placeholder: "phil@gmail.com",
+               autofocus: true,
+               input_html: {class:"input"} %>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control has-icons-left">
+              <%= f.input :password,
+                  required: true,
+                  wrapper: false,
+                  autocomplete: "new-password",
+                  label_html: {class:"label"},
+               input_html: {class:"input"} %>
+            </div>
+            <div class="field">
+              <div class="control has-icons-left">
+                <%= f.input :password_confirmation,
+                    required: true,
+                    wrapper: false,
+                    autocomplete: "new-password",
+                    label_html: {class:"label"},
+                 input_html: {class:"input"} %>
+              </div>
+              <%= f.button :submit, "Sign up", class: "button" %>
+        <% end %>
+            </div>
+          </div>
+      </div>
+</section>
