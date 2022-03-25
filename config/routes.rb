@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
-  devise_for :users, controllers: { registrations: "registrations" }
-  resources :posts, only: [:new, :create, :index]
+  devise_for :users, controllers: { registrations: 'registrations' }
+  resources :posts, only: %i[new create edit index show]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
-  root "posts#index"
+  root 'posts#index'
 end
