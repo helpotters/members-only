@@ -20,20 +20,23 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-end">
-          <div class="field is-grouped">
-            <div class="control navbar-item">
-              <%= link_to "New post", new_post_path %>
+          <% if user_signed_in? %>
+            <div class="field is-grouped">
+              <div class="control navbar-item">
+                <%= link_to "New post", new_post_path, class:"button is-link" %>
+              </div>
+              <div class="control navbar-item">
+                <%= button_to "Logout", destroy_user_session_path, method: :delete, class:"button is-info "%>
+              </div>
+          <% else %>
+              <div class="control navbar-item">
+                <%= link_to "Sign up", new_user_registration_path, class: "button is-info"  %>
+              </div>
+              <div class="control navbar-item">
+                <%= link_to "Log in", new_user_session_path, class: "button is-link" %>
+              </div>
             </div>
-            <div class="control navbar-item">
-              <%= link_to "Sign up", new_user_registration_path, class: "button is-info"  %>
-            </div>
-            <div class="control navbar-item">
-              <%= link_to "Sign in", new_user_session_path, class: "button is-info" %>
-            </div>
-            <div class="control navbar-item">
-
-            </div>
-          </div>
+          <% end %>
         </div>
       </div>
     </nav>
