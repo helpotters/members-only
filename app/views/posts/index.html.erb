@@ -1,14 +1,21 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1 class="title">Posts</h1>
 
-<div id="posts">
+<div class="container" id="posts">
   <% @posts.each do |post| %>
-    <%= render post %>
-    <p>
-      <%= link_to "Show this post", post %>
-    </p>
+    <div class="card level">
+      <div class="card-header">
+        <p class="card-header-title">
+          <%= link_to post.title, post %>
+        </p>
+      </div>
+      <div class="card-footer">
+        <p class="card-footer-item">
+          Posted by u/<%= post.user.username %>
+        </p>
+      </div>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New post", new_post_path %>
