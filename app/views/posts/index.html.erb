@@ -10,12 +10,17 @@
           <%= link_to post.title, post %>
         </p>
       </div>
-      <div class="card-footer">
-        <p class="card-footer-item">
-          Posted by u/<%= post.user.username %>
-        </p>
-      </div>
+      <% if user_signed_in? %>
+        <div class="card-footer">
+          <p class="card-footer-item">
+            Posted by u/<%= post.user.username %>
+          </p>
+        </div>
+      <% else %>
+        <div class="level-right">
+          <i class="fas fa-user"></i>
+        </div>
+      <% end %>
     </div>
   <% end %>
 </div>
-
