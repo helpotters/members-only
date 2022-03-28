@@ -40,6 +40,10 @@
 @import "font-awesome";
 
 
+.textarea:not([rows]) {
+    min-height: 50vh !important;
+}
 .navbar-brand .title {
     color:white
 }
+
