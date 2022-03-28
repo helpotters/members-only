@@ -1,10 +1,36 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @post %>
 
-<div>
-  <%= link_to "Edit this post", edit_post_path(@post) %> |
-  <%= link_to "Back to posts", posts_path %>
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= render @post %>
+      </div>
 
-  <%= button_to "Destroy this post", @post, method: :delete %>
-</div>
+      <% if user_signed_in? %>
+        <div class="column is-2">
+          <div class="card">
+            <div class="card-header">
+              <p class="card-header-title">
+                <%= @post.user.username %>
+              </p>
+            </div>
+            <div class="card-footer">
+
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<% if user_signed_in? && @post.user == current_user %>
+  <div class="column">
+    <%= link_to "Edit this post", edit_post_path(@post) %> |
+    <%= link_to "Back to posts", posts_path %>
+
+    <%= button_to "Destroy this post", @post, method: :delete %>
+  </div>
+<% end %>

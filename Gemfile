@@ -83,3 +83,5 @@ gem "guard", "~> 2.18"
 gem "guard-livereload", "~> 2.5"
 
 gem "sassc-rails", "~> 2.1"
+
+gem "redcarpet", "~> 3.5"
