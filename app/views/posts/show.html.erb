@@ -1,6 +1,4 @@
 <p style="color: green"><%= notice %></p>
-
-
 <section class="section">
   <div class="container">
     <div class="columns is-centered">
@@ -10,27 +8,35 @@
 
       <% if user_signed_in? %>
         <div class="column is-2">
-          <div class="card">
-            <div class="card-header">
-              <p class="card-header-title">
+          <div class="panel">
+            <div class="panel-heading">
+              <p>
                 <%= @post.user.username %>
               </p>
             </div>
-            <div class="card-footer">
-
+            <% if current_user == @post.user %>
+            <div class="panel-block">
+              <span class="panel-icon">
+                <i class="fa-solid fa-user"></i>
+              </span>
+                <%= link_to "Back to posts", posts_path %>
             </div>
+            <div class="panel-block">
+              <span class="panel-icon">
+                <i class="fa-regular fa-pencil"></i>
+              </span>
+                <%= link_to "Edit this post", edit_post_path(@post)%>
+            </div>
+            <div class="panel-block">
+              <span class="panel-icon">
+                <i class="fa fa-trashcan"></i>
+              </span>
+                <%= button_to "Destroy this post", @post, method: :delete, class: "button is-danger is-small"%>
+            </div>
+            <% end %>
           </div>
         </div>
       <% end %>
     </div>
   </div>
 </section>
-
-<% if user_signed_in? && @post.user == current_user %>
-  <div class="column">
-    <%= link_to "Edit this post", edit_post_path(@post) %> |
-    <%= link_to "Back to posts", posts_path %>
-
-    <%= button_to "Destroy this post", @post, method: :delete %>
-  </div>
-<% end %>

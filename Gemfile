@@ -85,3 +85,5 @@ gem "guard-livereload", "~> 2.5"
 gem "sassc-rails", "~> 2.1"
 
 gem "redcarpet", "~> 3.5"
+
+gem "font-awesome-sass", "~> 6.1"
